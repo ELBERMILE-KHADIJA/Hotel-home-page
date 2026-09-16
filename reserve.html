@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserve Now - HOTEL AGADIR</title>
+    
+    <link rel="stylesheet" href="tp01.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="cli/logo_transparent.png" class="logo" alt="Hotel Agadir Logo">
+            <ul class="menu">
+                <li><a href="projet.html">ACCUEL</a></li>
+                <li><a href="projet.html#about">ABOUT</a></li>
+                <li><a href="projet.html#rooms">ROOMS</a></li>
+                <li><a href="projet.html#Dining">DINING</a></li>
+                <li><a href="projet.html#spa">SPA</a></li>
+                <li><a href="projet.html#Activities">ACTIVITIES</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="reserve-hero" class="kp" style="padding: 60px 20px 20px;">
+        <h2 class="section-title">Reserve Your Stay</h2>
+        <p style="text-align:center; max-width:600px; margin: 0 auto 40px;">
+            Fill in your details below and our team will confirm your reservation at HOTEL AGADIR.
+        </p>
+    </section>
+
+    <section id="reserve-form" style="padding-bottom: 60px;">
+        <form onsubmit="handleReserve(event)" style="max-width: 500px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; display: flex; flex-direction: column; gap: 15px;">
+
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" name="fullname" required placeholder="Your full name" style="padding: 10px; border: 1px solid #8a6310; border-radius: 6px;">
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="you@example.com" style="padding: 10px; border: 1px solid #8a6310; border-radius: 6px;">
+
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" required placeholder="+212 6XX XXX XXX" style="padding: 10px; border: 1px solid #8a6310; border-radius: 6px;">
+
+            <div style="display: flex; gap: 15px;">
+                <div style="flex: 1;">
+                    <label for="checkin">Check-in</label>
+                    <input type="date" id="checkin" name="checkin" required style="padding: 10px; border: 1px solid #8a6310; border-radius: 6px; width: 100%;">
+                </div>
+                <div style="flex: 1;">
+                    <label for="checkout">Check-out</label>
+                    <input type="date" id="checkout" name="checkout" required style="padding: 10px; border: 1px solid #8a6310; border-radius: 6px; width: 100%;">
+                </div>
+            </div>
+
+            <label for="guests">Number of Guests</label>
+            <input type="number" id="guests" name="guests" min="1" value="1" required style="padding: 10px; border: 1px solid #8a6310; border-radius: 6px;">
+
+            <label for="roomtype">Room Type</label>
+            <select id="roomtype" name="roomtype" style="padding: 10px; border: 1px solid #8a6310; border-radius: 6px;">
+                <option value="suite">Luxury Suite</option>
+                <option value="villa">Private Villa</option>
+            </select>
+
+            <label for="notes">Special Requests (optional)</label>
+            <textarea id="notes" name="notes" rows="3" placeholder="Any special requests..." style="padding: 10px; border: 1px solid #8a6310; border-radius: 6px; resize: vertical;"></textarea>
+
+            <button type="submit" class="btn-luxe" style="margin-top: 10px;">Confirm  </button>
+
+            <p id="confirmation-msg" style="display:none; text-align:center; color: #8a6310; font-weight: bold;">
+                Thank you! Your reservation request has been received.
+            </p>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 HOTEL AGADIR. All rights reserved. | <a href="projet.html">Back to Home</a></p>
+    </footer>
+
+    <script>
+        function handleReserve(event) {
+            event.preventDefault();
+            document.getElementById('confirmation-msg').style.display = 'block';
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>
